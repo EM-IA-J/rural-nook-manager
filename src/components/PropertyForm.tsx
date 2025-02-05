@@ -4,7 +4,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Card } from './ui/card';
-import { Magic } from 'lucide-react';
+import { Wand2 } from 'lucide-react';
 
 export const PropertyForm = () => {
   const [isGenerating, setIsGenerating] = React.useState(false);
@@ -42,7 +42,7 @@ export const PropertyForm = () => {
               onClick={handleAIAssist}
               disabled={isGenerating}
             >
-              <Magic className="h-4 w-4 mr-1" />
+              <Wand2 className="h-4 w-4 mr-1" />
               AI Assist
             </Button>
           </div>
