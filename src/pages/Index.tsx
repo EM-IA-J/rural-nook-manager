@@ -2,9 +2,11 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Search, MapPin, Calendar } from 'lucide-react';
+import { Search, MapPin, Calendar, LogIn } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
+  const navigate = useNavigate();
   const properties = [
     {
       id: 1,
@@ -34,6 +36,21 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Navigation Bar */}
+      <nav className="border-b bg-white py-4">
+        <div className="container flex items-center justify-between">
+          <h1 className="font-playfair text-2xl font-bold text-primary">JaleoRural</h1>
+          <Button 
+            variant="outline" 
+            className="flex items-center gap-2"
+            onClick={() => navigate('/dashboard')}
+          >
+            <LogIn className="h-4 w-4" />
+            Iniciar Sesión
+          </Button>
+        </div>
+      </nav>
+
       {/* Hero Section with Search */}
       <div className="relative h-[70vh] bg-secondary">
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
@@ -92,6 +109,27 @@ const Index = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+      </div>
+
+      {/* Start Now Section */}
+      <div className="bg-secondary py-16">
+        <div className="container">
+          <div className="max-w-2xl mx-auto text-center space-y-6">
+            <h2 className="font-playfair text-4xl font-bold text-accent">
+              Comienza ahora con tu propiedad
+            </h2>
+            <p className="text-lg text-gray-600">
+              Únete a nuestra comunidad de anfitriones rurales y comienza a recibir huéspedes de todo el mundo.
+            </p>
+            <Button 
+              size="lg" 
+              className="bg-accent hover:bg-accent/90"
+              onClick={() => navigate('/dashboard')}
+            >
+              Publicar mi propiedad
+            </Button>
+          </div>
         </div>
       </div>
     </div>
